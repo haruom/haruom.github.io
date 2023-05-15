@@ -101,6 +101,18 @@
     <footer>
         <p>&copy; 水谷研究室</p>
     </footer>
+    <script>
+    $('.lang-select').click(function () {
+        var lang = $(this).attr('data-lang');
+        window.location = $(this).attr('href');
+        location.reload();
+    });
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'ja',
+            layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+        }, 'google_translate_element');
+    }
+    </script>
 </body>
-
 </html>
