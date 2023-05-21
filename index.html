@@ -104,6 +104,7 @@
     <script>
     $('.lang-select').click(function () {
         var lang = $(this).attr('data-lang');
+        localStorage.setItem('lang', lang);
         window.location = $(this).attr('href');
         location.reload();
     });

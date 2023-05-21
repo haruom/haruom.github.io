@@ -24,6 +24,12 @@
                 <li><a href="Research.html" class="no-active">RESEARCH</a></li>
                 <li><a href="Member.html" class="no-active">MEMBER</a></li>
                 <li><a href="Contact.html" class="no-active">CONTACT</a></li>
+                <div class="header-lan">
+                    <a href="#googtrans(ja|en)" class="lang-select" data-lang="en"><img
+                            src="https://www.solodev.com/assets/google-translate/flag-usa.png" alt="USA"></a>
+                    <a href="#googtrans(ja|ja)" class="lang-select" data-lang="ja"><img
+                            src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a>
+                </div>
             </ul>
         </nav>
     </header>
@@ -62,6 +68,19 @@
     <canvas class="particle-background"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <script type='text/javascript' src="../Particle/particle.js"></script>
+    <script>
+        $('.lang-select').click(function () {
+            var lang = $(this).attr('data-lang');
+            window.location = $(this).attr('href');
+            location.reload();
+        });
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ja',
+                layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+            }, 'google_translate_element');
+        }
+    </script>
 </body>
 
 </html>
