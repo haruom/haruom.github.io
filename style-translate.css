@@ -480,3 +480,25 @@ particl
         flex-direction: column;
     }
 }
+
+.member-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2列のグリッドを作成 */
+    grid-gap: 10px; /* 列間のスペース（必要に応じて調整） */
+    justify-items: center; /* 要素を水平方向に中央に配置 */
+    align-items: center; /* 要素を垂直方向に中央に配置 */
+    height: 100vh; /* 要素の高さをビューポートの高さに合わせる */
+  }
+  
+  .category {
+    margin-bottom: 20px; /* カテゴリ間のスペース（必要に応じて調整） */
+  }
+  
+  .member {
+    text-align: center;
+  }
+  
+  .member img {
+    width: 100px; /* 画像の幅（必要に応じて調整） */
+    height: 100px; /* 画像の高さ（必要に応じて調整） */
+  }
