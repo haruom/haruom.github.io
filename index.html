@@ -102,18 +102,25 @@
         <p>&copy; 水谷研究室</p>
     </footer>
     <script>
-    $('.lang-select').click(function () {
-        var lang = $(this).attr('data-lang');
-        localStorage.setItem('lang', lang);
-        window.location = $(this).attr('href');
-        location.reload();
-    });
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'ja',
-            layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
-        }, 'google_translate_element');
-    }
-    </script>
+        $('.lang-select').click(function (event) {
+            event.preventDefault(); // デフォルトの遷移を無効化
+        
+            var lang = $(this).attr('data-lang');
+            localStorage.setItem('lang', lang);
+            window.location.href = $(this).attr('href'); // ページ遷移
+        
+            // ページが遷移するのを待ってから再読み込みする
+            setTimeout(function () {
+                location.reload();
+            }, 500);
+        });
+        
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ja',
+                layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+            }, 'google_translate_element');
+        }
+        </script>
 </body>
 </html>

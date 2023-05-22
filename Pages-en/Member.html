@@ -53,6 +53,25 @@
     <canvas class="particle-background"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <script type='text/javascript' src="../Particle/particle3.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        // ページ読み込み時にURLに#googtrans(ja|en)を追加する
+        window.onload = function() {
+            var currentLang = localStorage.getItem('lang');
+            if (currentLang) {
+                var langCode = (currentLang === 'ja') ? 'ja|en' : 'en|ja';
+                if (window.location.hash !== '#googtrans(' + langCode + ')') {
+                    window.location.hash = 'googtrans(' + langCode + ')';
+                }
+            }
+        };
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ja',
+                layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+            }, 'google_translate_element');
+        }
+    </script>
 </body>
 
 </html>
