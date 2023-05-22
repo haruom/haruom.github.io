@@ -41,27 +41,22 @@
             <font color="blue">mailto:address</font>
         </a>
     </div>
-
-    <div class="empty">
-    </div>
     <footer>
         <p>&copy; 水谷研究室</p>
     </footer>
     <canvas class="particle-background-white"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
-    <script type='text/javascript' src="../Particle/particle4.js"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
         // ページ読み込み時にURLに#googtrans(ja|en)を追加する
         window.onload = function() {
-            var currentLang = localStorage.getItem('lang');
-            if (currentLang) {
-                var langCode = (currentLang === 'ja') ? 'ja|en' : 'en|ja';
-                if (window.location.hash !== '#googtrans(' + langCode + ')') {
-                    window.location.hash = 'googtrans(' + langCode + ')';
-                }
+        var currentLang = localStorage.getItem('lang');
+        if (currentLang && currentLang !== 'ja') { // 言語が日本語でない場合のみ実行
+            var langCode = (currentLang === 'ja') ? 'ja|en' : 'en|ja';
+            if (window.location.hash !== '#googtrans(' + langCode + ')') {
+                window.location.hash = 'googtrans(' + langCode + ')';
             }
-        };
+        }
+    };
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'ja',
@@ -69,6 +64,8 @@
             }, 'google_translate_element');
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script type='text/javascript' src="../Particle/particle4.js"></script>
 </body>
 
 </html>
